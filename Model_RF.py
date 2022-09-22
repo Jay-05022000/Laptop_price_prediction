@@ -1,5 +1,5 @@
 
-# Here feature elimination technique is used to remove features that have very low correlation with label(price).
+# Here feature elimination technique is used to remove features that have high correlation correlation with each other & low with label(price).
 
 # Importing Libraries.
 
@@ -19,11 +19,8 @@ test_label=test_df.iloc[:,-1].values
 
 # Feature elimination (Features which have very low correlation with label)
 
-train_feat.drop('Inches',axis=1,inplace=True)
-train_feat.drop('Type_Name',axis=1,inplace=True)
-
-test_feat.drop('Inches',axis=1,inplace=True)
-test_feat.drop('Type_Name',axis=1,inplace=True)
+train_feat.drop('gpu',axis=1,inplace=True)
+test_feat.drop('gpu',axis=1,inplace=True)
 
 
 # Model training & testing
@@ -55,10 +52,10 @@ print(f'Adjusted R-Squared score is:',adj_r2_score)
 
 '''
 Result:
-mean absolute error is: 159.38968888888888
-mean absolute percentage error is: 0.16436154712327572
-R-Squares score is: 0.8636026553318473
-Adjusted R-Squared score is: 0.8626856983929018
+mean absolute error is: 144.02326666666667
+mean absolute percentage error is: 0.13978548704948562
+R-Squares score is: 0.8481887261550035
+Adjusted R-Squared score is: 0.8470396080182457 
 
 '''
  
